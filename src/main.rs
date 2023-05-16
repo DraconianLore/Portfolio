@@ -13,14 +13,14 @@ fn main() {
 // href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 // create a component that renders a div with the text "Hello, world!"
 fn App(cx: Scope) -> Element {
-    let styling = include_str!("./styles.css");
+    let main_css = include_str!("./styles.css");
     cx.render(rsx! {
         link {href: "https://fonts.googleapis.com/css2?family=Exo&display=swap", rel: "stylesheet"}
-        style { styling }
+        style { main_css }
         components::header::Header{}
         div {
             id: "page_content",
-            "Hello, world!"
+            p { "Main content area" }
             
         }
     })
