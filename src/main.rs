@@ -4,7 +4,9 @@ use dioxus::prelude::*;
 
 mod components {
     pub mod header;
+    pub mod carousel;
 }
+
 
 fn main() {
     // launch the web app
@@ -20,8 +22,8 @@ fn App(cx: Scope) -> Element {
         components::header::Header{}
         div {
             id: "page_content",
-            p { "Main content area" }
-            
+            components::carousel::Carousel{}
         }
+        
     })
 }

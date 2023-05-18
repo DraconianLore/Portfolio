@@ -6,7 +6,7 @@ pub const HEADER: &str = r#"
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #666;
+        background-color: #223;
         color: #ccc;
         justify-content: center;
         align-items: center;
