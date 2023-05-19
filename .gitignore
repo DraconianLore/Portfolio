@@ -15,3 +15,8 @@ Cargo.lock
 
 # build files
 dist
+
+# vscode extension
+.vscode
+
+*Zone.Identifier
