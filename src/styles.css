@@ -3,6 +3,10 @@ body {
     font-family: 'Exo';
     background-color: #333344;
 }
+pre {
+  font-family: 'Exo';
+  white-space: pre-wrap;
+}
 
 #page_content {
     padding-top: 5em;
@@ -11,65 +15,50 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100vh - 10em)
+    height: calc(100vh - 6em);
+    padding-top: 5em;
+}
+.slide0 {
+  transform: translateX(0%);
+}
+.slide1 {
+  transform: translateX(-100%);
+}
+.slide2 {
+  transform: translateX(-200%);
+}
+.slide3 {
+  transform: translateX(-300%);
+}
+.slide4 {
+  transform: translateX(-400%);
+}
+.slide5 {
+  transform: translateX(-500%);
+}
+.slide6 {
+  transform: translateX(-600%);
+}
+.slide7 {
+  transform: translateX(-700%);
 }
 
-@keyframes carousel-anim {
-    0% {
-      transform: translateX(0);
-    }
-    8% {
-      transform: translateX(0%);
-    }
-    10% {
-        transform: translateX(-100%);
-      }
-    18% {
-      transform: translateX(-100%);
-    }
-    20% {
-        transform: translateX(-200%);
-    }
-    28% {
-        transform: translateX(-200%);
-    }
-    30% {
-        transform: translateX(-300%);
-    }
-    38% {
-        transform: translateX(-300%);
-    }
-    40% {
-        transform: translateX(-400%);
-    }
-    48% {
-      transform: translateX(-400%);
-    }
-    50% {
-      transform: translateX(-500%);
-    }
-    58% {
-      transform: translateX(-500%);
-    }
-    60% {
-      transform: translateX(-600%);
-    }
-    68% {
-        transform: translateX(-600%);
-      }
-    70% {
-      transform: translateX(-700%);
-    }
-    78% {
-        transform: translateX(-700%);
-    }
-    80% {
-        transform: translateX(-800%);
-    }
-    88% {
-        transform: translateX(-800%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
+.carousel_button {
+  position: fixed;
+  top: 5em;
+  width: 5%;
+  height: calc(100vh - 5em);
+  background-color: #334;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel_button:hover {
+  background-color: #335;
+}
+a {
+  color: #ccc;
+  font-weight: 700;
+}

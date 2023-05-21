@@ -11,7 +11,11 @@ pub fn Header(cx: Scope) -> Element {
                     "Steven Wing - Portfolio"
                 }
                 h1 {
-                    "test"
+                    a {
+                        style: "text-decoration: none;",
+                        href: "https://www.stevenwing.dev",
+                        "Résumé"
+                    }
                 }
             }
         }
