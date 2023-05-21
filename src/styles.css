@@ -3,6 +3,10 @@ body {
     font-family: 'Exo';
     background-color: #333344;
 }
+pre {
+  font-family: 'Exo';
+  white-space: pre-wrap;
+}
 
 #page_content {
     padding-top: 5em;
@@ -13,6 +17,9 @@ body {
     width: 100%;
     height: calc(100vh - 6em);
     padding-top: 5em;
+}
+.slide0 {
+  transform: translateX(0%);
 }
 .slide1 {
   transform: translateX(-100%);
@@ -35,17 +42,11 @@ body {
 .slide7 {
   transform: translateX(-700%);
 }
-.slide8 {
-  transform: translateX(-800%);
-}
-.slide0 {
-  transform: translateX(0%);
-}
 
 .carousel_button {
   position: fixed;
   top: 5em;
-  width: 6%;
+  width: 5%;
   height: calc(100vh - 5em);
   background-color: #334;
   border: none;
@@ -56,4 +57,8 @@ body {
 }
 .carousel_button:hover {
   background-color: #335;
+}
+a {
+  color: #ccc;
+  font-weight: 700;
 }
