@@ -19,7 +19,7 @@ pub fn Carousel(cx: Scope) -> Element {
                     let filename = pro.image.to_owned();
                     let fileType = filename[filename.len() -4..].to_string();
                     let live = pro.live.to_owned();
-                    let has_live = live.is_empty();
+                    let has_live = live.len() > 0;
 
                     rsx! {                  
                     div {
