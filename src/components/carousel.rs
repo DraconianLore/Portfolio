@@ -2,6 +2,7 @@ use dioxus::prelude::*;
 pub mod style;
 pub mod projects;
 
+
 pub fn Carousel(cx: Scope) -> Element {
     let mut carousel_page = use_state(cx, || 0);
     let number_of_projects = 7; //MUST BE UPDATED WHEN ADDING NEW PROJECTS
@@ -15,8 +16,10 @@ pub fn Carousel(cx: Scope) -> Element {
                 (0..number_of_projects).map(|i| {
                     let pro = projects::GET_PROJECT(i);
                     // Video checking
-                    let filename = String::from(pro.image);
+                    let filename = pro.image.to_owned();
                     let fileType = filename[filename.len() -4..].to_string();
+                    let live = pro.live.to_owned();
+                    let has_live = live.len() > 0;
 
                     rsx! {                  
                     div {
@@ -28,7 +31,7 @@ pub fn Carousel(cx: Scope) -> Element {
                                 div {
                                     style: "width: 110px;",
                                     a {
-                                    href: pro.github,
+                                    href: "{pro.github.to_owned()}",
                                     style: style::GITHUB,
                                     target: "_blank",
                                     title: "See on Github",
@@ -40,13 +43,13 @@ pub fn Carousel(cx: Scope) -> Element {
                             }
                             h1 {
                                 style: style::PROJECT_TITLE,
-                                pro.name
+                                "{pro.name.to_owned()}"
                             }
-                            if pro.live.len() > 0 {
+                            if has_live {
                                 rsx!{div{
                                     style: "width: 110px; padding-right: 5px;",
                                     a {
-                                        href: pro.live,
+                                        href: "{pro.live.to_owned()}",
                                         style: style::LIVE,
                                         target: "_blank",
                                         title: "See this project live.",
@@ -71,14 +74,14 @@ pub fn Carousel(cx: Scope) -> Element {
                                         style: style::PROJECT_IMG,
                                         autoplay: true,
                                         "loop": true,
-                                        src: "static/images/projects/{pro.image}"
+                                        src: "static/images/projects/{pro.image.to_owned()}"
                                     }
                                 }
                             } else {
                                 rsx!{
                                     img {
                                         style: style::PROJECT_IMG,
-                                        src: "static/images/projects/{pro.image}"
+                                        src: "static/images/projects/{pro.image.to_owned()}"
                                     }
                                 }
                             }
@@ -86,15 +89,15 @@ pub fn Carousel(cx: Scope) -> Element {
                                style: style::PROJECT_DESCRIPTION,
                                "See this project on " 
                                a {
-                                href: pro.github,
+                                href: "{pro.github.to_owned()}",
                                 target: "_blank",
                                 "Github"
                                }
-                               if pro.live.len() > 0 {
+                               if has_live {
                                     rsx!{span {
                                         " and check out the live version running "
                                         a {
-                                            href: pro.live,
+                                            href: "{live}",
                                             target: "_blank",
                                             "HERE."
                                         }
@@ -103,24 +106,24 @@ pub fn Carousel(cx: Scope) -> Element {
                             }
                             pre {
                                 style: style::PROJECT_DESCRIPTION,
-                                pro.description
+                                "{pro.description.to_owned()}"
                             }
                             p {
                                 b {
                                     "Tech Stack: "
                                 }
-                                pro.tech_stack
+                                "{pro.tech_stack.to_owned()}"
                             }
                             div {
                                 style: style::LOGO_CONTAINER,
                                 for logo in pro.logos {
                                     rsx!{a {
-                                        href: logo[2],
+                                        href: "{logo.link.to_owned()}",
                                         target: "_blank",
-                                        title: logo[0],
+                                        title: "{logo.title.to_owned()}",
                                         img {
                                             style: style::LOGO,
-                                            src: "static/images/{logo[1]}",
+                                            src: "static/images/{logo.image.to_owned()}",
                                             }
                                         }
                                     }
@@ -137,18 +140,18 @@ pub fn Carousel(cx: Scope) -> Element {
                         h1 {
                             "Other Projects"
                         }
-                        projects::minor_projects::MINOR_PROJECTS.iter().map(|mp| {
+                        projects::minor_projects::minro_projects().iter().map(|mp| {
                             rsx!{
 
                                 p {
                                     style: style::PROJECT_DESCRIPTION,
                                     a {
                                         style: "font-weight: 700;",
-                                        href: mp.github,
+                                        href: "{mp.github.to_owned()}",
                                         target: "_blank",
-                                        "{mp.name}: "
+                                        "{mp.name.to_owned()}: "
                                     }
-                                    mp.description
+                                    "{mp.description.to_owned()}"
                                 }
                             }
                         })
