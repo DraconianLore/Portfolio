@@ -1,32 +1,42 @@
-use crate::components::carousel::projects::Minor_Project;
+use crate::components::carousel::projects::MinorProject;
 
-pub const MINOR_PROJECTS: &[Minor_Project] = &[
-    JUNGLE, 
-    CHATTYAPP,
-    CONLIGO,
-    TWEETER,
-    ];
+pub fn minro_projects() -> Vec<MinorProject> {
+    vec![
+        jungle(),
+        chattyapp(),
+        conligo(),
+        tweeter(),
+    ]
+}
 
-const JUNGLE: Minor_Project = Minor_Project {
-    name: "Jungle",
-    github: "https://github.com/DraconianLore/jungle-rails",
-    description: "An e-commerce application built with Ruby on rails."
-};
+fn jungle() -> MinorProject {
+    MinorProject {
+        name: String::from("Jungle"),
+        github: String::from("https://github.com/DraconianLore/jungle-rails"),
+        description: String::from("An e-commerce application built with Ruby on Rails."),
+    }
+}
 
-const CHATTYAPP: Minor_Project = Minor_Project {
-    name: "ChattyApp",
-    github: "https://github.com/DraconianLore/chattyApp",
-    description: "A compact anonymous chatroom built with nodeJS, React, WebSockets and sass."
-};
+pub fn chattyapp() -> MinorProject {
+    MinorProject {
+        name: String::from("ChattyApp"),
+        github: String::from("https://github.com/DraconianLore/chattyApp"),
+        description: String::from("A compact anonymous chatroom built with Node.js, React, WebSockets, and Sass."),
+    }
+}
 
-const CONLIGO: Minor_Project = Minor_Project {
-    name: "Conligo",
-    github: "https://github.com/wonseobshin/conligo",
-    description: "A smart ToDo list that categorizes items the user adds into a category by calling various APIs to find out what the item is."
-};
+pub fn conligo() -> MinorProject {
+    MinorProject {
+        name: String::from("Conligo"),
+        github: String::from("https://github.com/wonseobshin/conligo"),
+        description: String::from("A smart ToDo list that categorizes items the user adds into a category by calling various APIs to find out what the item is."),
+    }
+}
 
-const TWEETER: Minor_Project = Minor_Project {
-    name: "Tweeter",
-    github: "https://github.com/DraconianLore/tweeter",
-    description: "A single-page AJAX-based Twitter clone that uses jQuery, HTML5 and CSS3."
-};
+pub fn tweeter() -> MinorProject {
+    MinorProject {
+        name: String::from("Tweeter"),
+        github: String::from("https://github.com/DraconianLore/tweeter"),
+        description: String::from("A single-page AJAX-based Twitter clone that uses jQuery, HTML5, and CSS3."),
+    }
+}

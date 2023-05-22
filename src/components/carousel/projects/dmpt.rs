@@ -1,10 +1,13 @@
 use crate::components::carousel::projects::Project;
-pub const DETAILS: Project = Project {
-    name: "DM Player Tracker",
-    description: "A tool for Dungeon Masters to track their players and NPC's in Dungeons and Dragons.\n The user can see an overview of all their players and NPCs, and click into any character to see the full details.\n They can also level up characters, which auto-fills certain fields, manage player items and notes, and share a player version of characters with the players.",
-    tech_stack: "Ruby, Rails, React, PostgreSQL",
-    image: "dmplayertracker.gif",
-    github: "https://github.com/DraconianLore/dmPlayerTracker",
-    live: "https://dmpt.stevenwing.dev/",
-    logos: &[&["Ruby","ruby.png","https://www.ruby-lang.org"],&["Ruby on Rails", "rails.png", "https://rubyonrails.org"], &["React", "react.png", "https://react.dev"], &["PostgreSQL", "psql.svg", "https://www.postgresql.org"]],
-};
+use crate::components::carousel::projects::logos;
+pub fn details() -> Project {
+    Project{
+        name: String::from("DM Player Tracker"),
+        description: String::from("A tool for Dungeon Masters to track their players and NPC's in Dungeons and Dragons.\n The user can see an overview of all their players and NPCs, and click into any character to see the full details.\n They can also level up characters, which auto-fills certain fields, manage player items and notes, and share a player version of characters with the players."),
+        tech_stack: String::from("Ruby, Rails, React, PostgreSQL"),
+        image: String::from("dmplayertracker.gif"),
+        github: String::from("https://github.com/DraconianLore/dmPlayerTracker"),
+        live: String::from("https://dmpt.stevenwing.dev/"),
+        logos: vec![logos::get_logo("ruby"), logos::get_logo("rails"), logos::get_logo("react"), logos::get_logo("postgresql")],
+    }
+}
