@@ -11,8 +11,8 @@
       var viewport = document.querySelector("meta[name=viewport]"); viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight), viewport.setAttribute("content", viewport.content + ", width=" + window.innerWidth);
     </script>
   
-<link rel="preload" href="/Portfolio/Portfolio_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/Portfolio/Portfolio.js"></head>
+<link rel="preload" href="/Portfolio_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/Portfolio.js"></head>
 
   <body id="main">
-<script type="module">import init from '/Portfolio/Portfolio.js';init('/Portfolio/Portfolio_bg.wasm');</script></body></html>
+<script type="module">import init from '/Portfolio.js';init('/Portfolio_bg.wasm');</script></body></html>
