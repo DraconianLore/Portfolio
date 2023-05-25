@@ -8,6 +8,6 @@ pub fn details() -> Project {
         image: String::from("portfolio.png"),
         github: String::from("https://github.com/DraconianLore/Portfolio"),
         live: String::from("https://www.stevenwing.dev/"),
-        logos: vec![logos::get_logo("rust"), logos::get_logo("dioxus"), logos::get_logo("webassemply")],
+        logos: vec![logos::get_logo("rust"), logos::get_logo("dioxus"), logos::get_logo("webassembly")],
     }
 }
