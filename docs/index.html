@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head>
+    <title>Portfolio - Steven Wing</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height">
+
+    
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+      var viewport = document.querySelector("meta[name=viewport]"); viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight), viewport.setAttribute("content", viewport.content + ", width=" + window.innerWidth);
+    </script>
+  
+<link rel="preload" href="/Portfolio_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/Portfolio.js"></head>
+
+  <body id="main">
+<script type="module">import init from '/Portfolio.js';init('/Portfolio_bg.wasm');</script></body></html>
