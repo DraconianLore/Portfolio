@@ -7,7 +7,7 @@ pub fn details() -> Project {
         tech_stack: String::from("Rust, Dioxus, WebAssembly"),
         image: String::from("portfolio.png"),
         github: String::from("https://github.com/DraconianLore/Portfolio"),
-        live: String::from("https://www.stevenwing.dev/"),
+        live: String::from(""),
         logos: vec![logos::get_logo("rust"), logos::get_logo("dioxus"), logos::get_logo("webassembly")],
     }
 }
