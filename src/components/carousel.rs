@@ -47,7 +47,7 @@ pub fn Carousel(cx: Scope) -> Element {
                             }
                             if has_live {
                                 rsx!{div{
-                                    style: "width: 110px; padding-right: 5px;",
+                                    style: "width: 104px; padding-right: 5px;",
                                     a {
                                         href: "{pro.live.to_owned()}",
                                         style: style::LIVE,
@@ -60,7 +60,7 @@ pub fn Carousel(cx: Scope) -> Element {
                                 }}
                                 } else {
                                     rsx!{div {
-                                        style: "width: 110px;",
+                                        style: "width: 104px;",
                                     }}
                                 }
                             }
@@ -79,9 +79,15 @@ pub fn Carousel(cx: Scope) -> Element {
                                 }
                             } else {
                                 rsx!{
-                                    img {
-                                        style: style::PROJECT_IMG,
-                                        src: "static/images/projects/{pro.image.to_owned()}"
+                                    a {
+                                        href: "static/images/projects/{pro.image.to_owned()}",
+                                        target: "_blank",
+                                        title: "Click to see full size image",
+                                        style: style::IMG_CONTAINER,
+                                        img {
+                                            style: style::PROJECT_IMG,
+                                            src: "static/images/projects/{pro.image.to_owned()}"
+                                        }
                                     }
                                 }
                             }
@@ -109,6 +115,7 @@ pub fn Carousel(cx: Scope) -> Element {
                                 "{pro.description.to_owned()}"
                             }
                             p {
+                                style: style::TECH_STACK,
                                 b {
                                     "Tech Stack: "
                                 }
