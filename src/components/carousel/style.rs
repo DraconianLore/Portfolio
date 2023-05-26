@@ -24,12 +24,12 @@ pub const CAROUSEL_HEADER: &str = r#"
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 1em;
+    margin: 0.5em 0.5em 1em;
 "#;
     
 pub const CAROUSEL_CONTENT: &str = r#"
     height: 100%;
-    width: 90%;
+    width: 90vw;
     background-color: #666699;
     color: #ccf;
     display: flex;
@@ -49,6 +49,13 @@ pub const PROJECT_TITLE: &str = r#"
     margin-bottom: 0;
     flex-grow: 1;
     text-align: center;
+    font-size: 1.5em;
+"#;
+
+pub const IMG_CONTAINER: &str = r#"
+    width: 100%;
+    display: flex;
+    justify-content: center;
 "#;
 
 pub const PROJECT_IMG: &str = r#"
@@ -69,25 +76,30 @@ pub const BTN_ARROW: &str = r#"
 "#;
 
 pub const GITHUB: &str = r#"
-    margin: 0.5em;
+    margin-left: 0.5em;
     cursor: pointer;
 "#;
 
 pub const LIVE: &str = r#"
-    margin: 0.5em;
+    margin-right: 0.5em;
     cursor: pointer;
+"#;
+
+pub const TECH_STACK: &str = r#"
+    padding: 1em 1em 0;
 "#;
 
 pub const LOGO_CONTAINER: &str = r#"
     display: flex;
     justify-content: center;
     background-color: #334;
-    padding: 0 2em;
     border-radius: 2em;
     margin-bottom: 2em;
+    flex-wrap: wrap;
+    max-width: 90%;
 "#;
 
 pub const LOGO: &str = r#"
-    height: 50px;
+    max-height: 50px;
     margin: 1em;
 "#;

@@ -18,4 +18,3 @@ pub const HEADER_CONTENT: &str = r#"
     justify-content: space-between;
 "#;
 
-
