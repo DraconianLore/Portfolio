@@ -18,8 +18,6 @@ pub fn Carousel(cx: Scope) -> Element {
                     // Video checking
                     let filename = pro.image.to_owned();
                     let fileType = filename[filename.len() -4..].to_string();
-                    let live = pro.live.to_owned();
-                    let has_live = live.len() > 0;
 
                     rsx! {                  
                     div {
@@ -45,11 +43,12 @@ pub fn Carousel(cx: Scope) -> Element {
                                 style: style::PROJECT_TITLE,
                                 "{pro.name.to_owned()}"
                             }
-                            if has_live {
+                            if pro.live.is_some() {
+                                let live = pro.live.clone();
                                 rsx!{div{
                                     style: "width: 104px; padding-right: 5px;",
                                     a {
-                                        href: "{pro.live.to_owned()}",
+                                        href: "{live.unwrap()}",
                                         style: style::LIVE,
                                         target: "_blank",
                                         title: "See this project live.",
@@ -99,11 +98,11 @@ pub fn Carousel(cx: Scope) -> Element {
                                 target: "_blank",
                                 "Github"
                                }
-                               if has_live {
+                               if pro.live.is_some() {
                                     rsx!{span {
                                         " and check out the live version running "
                                         a {
-                                            href: "{live}",
+                                            href: "{pro.live.unwrap()}",
                                             target: "_blank",
                                             "HERE."
                                         }

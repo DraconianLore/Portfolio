@@ -7,7 +7,7 @@ pub fn details() -> Project {
         tech_stack: String::from("Ruby, Rails, React, Websockets, PostgreSQL"),
         image: String::from("runescribe.webm"),
         github: String::from("https://github.com/DraconianLore/rune_scribe"),
-        live: String::from(""),
+        live: None,
         logos: vec![logos::get_logo("ruby"), logos::get_logo("rails"), logos::get_logo("react"), logos::get_logo("websockets"), logos::get_logo("postgresql")],
     }
 }

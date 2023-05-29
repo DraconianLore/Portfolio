@@ -6,7 +6,7 @@ pub struct Project {
     pub tech_stack: String,
     pub image: String,
     pub github: String,
-    pub live: String,
+    pub live: Option<String>,
     pub logos: Vec<Logo>,
 }
 
