@@ -10,3 +10,9 @@ address = "127.0.0.1"
 # The port to serve on.
 port = 8000
 open = true
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["-c", "echo 'projects.stevenwing.dev' > $TRUNK_STAGING_DIR/CNAME"]
+
