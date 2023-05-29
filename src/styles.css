@@ -75,3 +75,10 @@ a {
 ::-webkit-scrollbar-thumb {
   background-color: transparent; /* Set the thumb color to transparent */
 }
+
+.resume-link {
+  text-decoration: none;
+}
+.resume-link:hover {
+  color: rgba(155, 155, 255, 70%)
+}

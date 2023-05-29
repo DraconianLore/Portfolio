@@ -8,11 +8,12 @@ pub fn Header(cx: Scope) -> Element {
             div { 
                 style: style::HEADER_CONTENT,
                 h1 {
-                    "Steven Wing - Portfolio"
+                    "Steven Wing"
                 }
                 h1 {
                     a {
-                        style: "text-decoration: none;",
+
+                        class: "resume-link",
                         href: "https://www.stevenwing.dev",
                         "Résumé"
                     }
