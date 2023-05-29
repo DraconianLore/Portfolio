@@ -7,7 +7,7 @@ pub fn details() -> Project {
         tech_stack: String::from("Ruby, Rails, React Native, PostgreSQL"),
         image: String::from("koios.png"),
         github: String::from("https://github.com/DraconianLore/Koios"),
-        live: String::from(""),
+        live: None,
         logos: vec![logos::get_logo("ruby"), logos::get_logo("rails"), logos::get_logo("react native"), logos::get_logo("postgresql")],
     }
 }

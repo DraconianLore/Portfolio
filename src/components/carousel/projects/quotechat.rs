@@ -7,7 +7,7 @@ pub fn details() -> Project {
         tech_stack: String::from("Express, Node.js, Puthon, PostgreSQL"),
         image: String::from("quoteChat.gif"),
         github: String::from("https://github.com/alumni-lab/quote-chat"),
-        live: String::from(""),
+        live: None,
         logos: vec![logos::get_logo("express"), logos::get_logo("node.js"), logos::get_logo("python"), logos::get_logo("postgresql")],
     }
 }
