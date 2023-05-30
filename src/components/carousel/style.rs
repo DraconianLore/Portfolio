@@ -26,7 +26,7 @@ pub const CAROUSEL_HEADER: &str = r#"
     width: 100%;
     margin: 0.5em 0.5em 1em;
 "#;
-    
+
 pub const CAROUSEL_CONTENT: &str = r#"
     height: 100%;
     width: 90vw;

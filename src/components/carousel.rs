@@ -13,8 +13,7 @@ pub fn Carousel(cx: Scope) -> Element {
                 style: style::CAROUSEL_INNER,
                 class: "slide{carousel_page}",
                 
-                (0..number_of_projects).map(|i| {
-                    let pro = projects::GET_PROJECT(i);
+                projects::load_projects().into_iter().map(|pro| {
                     // Video checking
                     let filename = pro.image.to_owned();
                     let fileType = filename[filename.len() -4..].to_string();
@@ -29,7 +28,7 @@ pub fn Carousel(cx: Scope) -> Element {
                                 div {
                                     style: "width: 110px;",
                                     a {
-                                    href: "{pro.github.to_owned()}",
+                                    href: "{pro.github}",
                                     style: style::GITHUB,
                                     target: "_blank",
                                     title: "See on Github",
@@ -43,25 +42,29 @@ pub fn Carousel(cx: Scope) -> Element {
                                 style: style::PROJECT_TITLE,
                                 "{pro.name.to_owned()}"
                             }
-                            if pro.live.is_some() {
-                                let live = pro.live.clone();
-                                rsx!{div{
-                                    style: "width: 104px; padding-right: 5px;",
-                                    a {
-                                        href: "{live.unwrap()}",
-                                        style: style::LIVE,
-                                        target: "_blank",
-                                        title: "See this project live.",
-                                        img {
-                                            src: "static/images/live-demo.png"
+                            match pro.live.clone() {
+                                Some(live) => {
+                                    rsx!{div{
+                                        style: "width: 104px; padding-right: 5px;",
+                                        a {
+                                            href: "{live}",
+                                            style: style::LIVE,
+                                            target: "_blank",
+                                            title: "See this project live.",
+                                            img {
+                                                src: "static/images/live-demo.png"
+                                            }
                                         }
-                                    }
-                                }}
-                                } else {
+                                    }}
+                                },
+                                None => {
                                     rsx!{div {
                                         style: "width: 104px;",
                                     }}
+
                                 }
+                            }
+        
                             }
                             div {
 
@@ -73,7 +76,7 @@ pub fn Carousel(cx: Scope) -> Element {
                                         style: style::PROJECT_IMG,
                                         autoplay: true,
                                         "loop": true,
-                                        src: "static/images/projects/{pro.image.to_owned()}"
+                                        src: "static/images/projects/{pro.image}"
                                     }
                                 }
                             } else {
@@ -90,6 +93,7 @@ pub fn Carousel(cx: Scope) -> Element {
                                     }
                                 }
                             }
+
                             p {
                                style: style::PROJECT_DESCRIPTION,
                                "See this project on " 
@@ -98,11 +102,11 @@ pub fn Carousel(cx: Scope) -> Element {
                                 target: "_blank",
                                 "Github"
                                }
-                               if pro.live.is_some() {
+                               if let Some(live) = pro.live {
                                     rsx!{span {
                                         " and check out the live version running "
                                         a {
-                                            href: "{pro.live.unwrap()}",
+                                            href: "{live}",
                                             target: "_blank",
                                             "HERE."
                                         }

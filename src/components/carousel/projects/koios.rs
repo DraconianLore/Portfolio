@@ -1,5 +1,5 @@
-use crate::components::carousel::projects::Project;
-use crate::components::carousel::projects::logos;
+use crate::components::carousel::projects::{Project, logos};
+
 pub fn details() -> Project {
     Project{
         name: String::from("Koios"),
@@ -8,6 +8,6 @@ pub fn details() -> Project {
         image: String::from("koios.png"),
         github: String::from("https://github.com/DraconianLore/Koios"),
         live: None,
-        logos: vec![logos::get_logo("ruby"), logos::get_logo("rails"), logos::get_logo("react native"), logos::get_logo("postgresql")],
+        logos: vec![logos::RUBY, logos::RAILS, logos::REACT_NATIVE, logos::POSTGRES],
     }
 }

@@ -1,5 +1,5 @@
 use crate::components::carousel::projects::logos::Logo;
-
+#[derive(Clone)]
 pub struct Project {
     pub name: String,
     pub description: String,
@@ -29,16 +29,15 @@ pub mod koios;
 pub mod runescribe;
 
 // Add new projects here in desired slide order
-pub fn GET_PROJECT(i: i32) -> Project {
-    let current_project = match i {
-        0 => portfolio::details(),
-        1 => dmpt::details(),
-        2 => gamematch::details(),
-        3 => runescribe::details(),
-        4 => quotechat::details(),
-        5 => donateIT::details(),
-        6 => koios::details(),
-        _ => portfolio::details(),
-    };
-    return current_project;
+
+pub fn load_projects() -> Vec<Project> {
+    vec![
+        portfolio::details(), 
+        dmpt::details(), 
+        gamematch::details(),
+        runescribe::details(),
+        quotechat::details(),
+        donateIT::details(),
+        koios::details()
+        ]
 }

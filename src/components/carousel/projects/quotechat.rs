@@ -1,5 +1,5 @@
-use crate::components::carousel::projects::Project;
-use crate::components::carousel::projects::logos;
+use crate::components::carousel::projects::{Project, logos};
+
 pub fn details() -> Project {
     Project{
         name: String::from("Quote-Chat"),
@@ -8,7 +8,6 @@ pub fn details() -> Project {
         image: String::from("quoteChat.gif"),
         github: String::from("https://github.com/alumni-lab/quote-chat"),
         live: None,
-        logos: vec![logos::get_logo("express"), logos::get_logo("node.js"), logos::get_logo("python"), logos::get_logo("postgresql")],
+        logos: vec![logos::EXPRESS, logos::NODEJS, logos::PYTHON, logos::POSTGRES],
     }
 }
-
