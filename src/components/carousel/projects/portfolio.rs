@@ -1,5 +1,5 @@
-use crate::components::carousel::projects::Project;
-use crate::components::carousel::projects::logos;
+use crate::components::carousel::projects::{Project, logos};
+
 pub fn details() -> Project {
     Project{
         name: String::from("My Portfolio"),
@@ -8,6 +8,6 @@ pub fn details() -> Project {
         image: String::from("portfolio.webm"),
         github: String::from("https://github.com/DraconianLore/Portfolio"),
         live: None,
-        logos: vec![logos::get_logo("rust"), logos::get_logo("dioxus"), logos::get_logo("webassembly")],
+        logos: vec![logos::RUST, logos::DIOXUS, logos::WASM],
     }
 }

@@ -1,5 +1,5 @@
-use crate::components::carousel::projects::Project;
-use crate::components::carousel::projects::logos;
+use crate::components::carousel::projects::{Project, logos};
+
 
 pub fn details() -> Project {
     Project{
@@ -9,6 +9,6 @@ pub fn details() -> Project {
         image: String::from("donateIT.gif"),
         github: String::from("https://github.com/ChesterCorin/vanhacks-2019-frontend"),
         live: None,
-        logos: vec![logos::get_logo("ruby"), logos::get_logo("rails"), logos::get_logo("angular"), logos::get_logo("postgresql")]
+        logos: vec![logos::RUBY, logos::RAILS, logos::ANGULAR, logos::POSTGRES]
     }
 }

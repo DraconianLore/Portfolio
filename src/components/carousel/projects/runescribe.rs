@@ -1,5 +1,4 @@
-use crate::components::carousel::projects::Project;
-use crate::components::carousel::projects::logos;
+use crate::components::carousel::projects::{Project, logos};
 pub fn details() -> Project {
     Project{
         name: String::from("Runescribe Familiar"),
@@ -8,6 +7,6 @@ pub fn details() -> Project {
         image: String::from("runescribe.webm"),
         github: String::from("https://github.com/DraconianLore/rune_scribe"),
         live: None,
-        logos: vec![logos::get_logo("ruby"), logos::get_logo("rails"), logos::get_logo("react"), logos::get_logo("websockets"), logos::get_logo("postgresql")],
+        logos: vec![logos::RUBY, logos::RAILS, logos::REACT, logos::WEBSOCKETS, logos::POSTGRES],
     }
 }

@@ -1,92 +1,76 @@
+#[derive(Clone)]
 pub struct Logo {
-    pub title: String,
-    pub image: String,
-    pub link: String,
+    pub title: &'static str,
+    pub image: &'static str,
+    pub link: &'static str,
 }
 
-pub fn get_logo(logo: &str) -> Logo {
-    let ruby = Logo {
-        title: String::from("Ruby"),
-        image: String::from("ruby.png"),
-        link: String::from("https://www.ruby-lang.org"),
-    };
-    let rust = Logo {
-        title: String::from("Rust"),
-        image: String::from("rust-logo-64x64.png"),
-        link: String::from("https://www.rust-lang.org"),
-    };
-    let rails = Logo {
-        title: String::from("Rails"),
-        image: String::from("rails.png"),
-        link: String::from("https://rubyonrails.org"),
-    };
-    let react = Logo {
-        title: String::from("React"),
-        image: String::from("react.png"),
-        link: String::from("https://react.dev"),
-    };
-    let react_native = Logo {
-        title: String::from("React Native"),
-        image: String::from("react-native.png"),
-        link: String::from("https://reactnative.dev"),
-    };
-    let postgres = Logo {
-        title: String::from("PostgreSQL"),
-        image: String::from("psql.svg"),
-        link: String::from("https://www.postgresql.org"),
-    };
-    let wasm = Logo {
-        title: String::from("WebAssembly"),
-        image: String::from("wasm.png"),
-        link: String::from("https://webassembly.org"),
-    };
-    let dioxus = Logo {
-        title: String::from("Dioxus"),
-        image: String::from("dioxus.png"),
-        link: String::from("https://dioxuslabs.com"),
-    };
-    let websockets = Logo {
-        title: String::from("Websockets"),
-        image: String::from("websockets.svg"),
-        link: String::from("https://websockets.readthedocs.io"),
-    };
-    
-    let express = Logo {
-        title: String::from("Express"),
-        image: String::from("express.png"),
-        link: String::from("https://expressjs.com"),
-    };
-    
-    let nodejs = Logo {
-        title: String::from("Node.JS"),
-        image: String::from("nodejs-dark.png"),
-        link: String::from("https://nodejs.org"),
-    };
-    let python = Logo {
-        title: String::from("Python"),
-        image: String::from("python-logo.png"),
-        link: String::from("https://www.python.org"),
-    };
-    let angular = Logo {
-        title: String::from("Angular"),
-        image: String::from("angular.png"),
-        link: String::from("https://angular.io"),
-    };
 
-    match logo {
-        "ruby" => ruby,
-        "rust" => rust,
-        "rails" => rails,
-        "react" => react,
-        "react native" => react_native,
-        "postgresql" => postgres,
-        "webassembly" => wasm,
-        "dioxus" => dioxus,
-        "websockets" => websockets,
-        "express" => express,
-        "node.js" => nodejs,
-        "python" => python,
-        "angular" => angular,
-        _ => react,
-    }
-}
+pub const RUBY: Logo = Logo {
+    title: "Ruby",
+    image: "ruby.png",
+    link: "https://www.ruby-lang.org",
+};
+pub const RUST: Logo = Logo {
+    title: "Rust",
+    image: "rust-logo-64x64.png",
+    link: "https://www.rust-lang.org",
+};
+pub const RAILS: Logo = Logo {
+    title: "Rails",
+    image: "rails.png",
+    link: "https://rubyonrails.org",
+};
+pub const REACT: Logo = Logo {
+    title: "React",
+    image: "react.png",
+    link: "https://react.dev",
+};
+pub const REACT_NATIVE: Logo = Logo {
+    title: "React Native",
+    image: "react-native.png",
+    link: "https://reactnative.dev",
+};
+pub const POSTGRES: Logo = Logo {
+    title: "PostgreSQL",
+    image: "psql.svg",
+    link: "https://www.postgresql.org",
+};
+pub const WASM: Logo = Logo {
+    title: "WebAssembly",
+    image: "wasm.png",
+    link: "https://webassembly.org",
+};
+pub const DIOXUS: Logo = Logo {
+    title: "Dioxus",
+    image: "dioxus.png",
+    link: "https://dioxuslabs.com",
+};
+pub const WEBSOCKETS: Logo = Logo {
+    title: "Websockets",
+    image: "websockets.svg",
+    link: "https://websockets.readthedocs.io",
+};
+
+pub const EXPRESS: Logo = Logo {
+    title: "Express",
+    image: "express.png",
+    link: "https://expressjs.com",
+};
+
+pub const NODEJS: Logo = Logo {
+    title: "Node.JS",
+    image: "nodejs-dark.png",
+    link: "https://nodejs.org",
+};
+pub const PYTHON: Logo = Logo {
+    title: "Python",
+    image: "python-logo.png",
+    link: "https://www.python.org",
+};
+pub const ANGULAR: Logo = Logo {
+    title: "Angular",
+    image: "angular.png",
+    link: "https://angular.io",
+};
+

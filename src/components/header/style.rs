@@ -17,4 +17,3 @@ pub const HEADER_CONTENT: &str = r#"
     width: 90%;
     justify-content: space-between;
 "#;
-

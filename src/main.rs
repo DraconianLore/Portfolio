@@ -3,10 +3,9 @@
 use dioxus::prelude::*;
 
 mod components {
-    pub mod header;
     pub mod carousel;
+    pub mod header;
 }
-
 
 fn main() {
     // launch the web app
@@ -24,6 +23,6 @@ fn App(cx: Scope) -> Element {
             id: "page_content",
             components::carousel::Carousel{}
         }
-        
+
     })
 }
