@@ -831,12 +831,12 @@ imports.wbg.__wbindgen_memory = function() {
     const ret = wasm.memory;
     return addHeapObject(ret);
 };
-imports.wbg.__wbindgen_closure_wrapper227 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 71, __wbg_adapter_18);
+imports.wbg.__wbindgen_closure_wrapper228 = function(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 72, __wbg_adapter_18);
     return addHeapObject(ret);
 };
-imports.wbg.__wbindgen_closure_wrapper349 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 143, __wbg_adapter_21);
+imports.wbg.__wbindgen_closure_wrapper350 = function(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 144, __wbg_adapter_21);
     return addHeapObject(ret);
 };
 imports['./snippets/dioxus-interpreter-js-1676574062e4c953/inline0.js'] = __wbg_star0;
